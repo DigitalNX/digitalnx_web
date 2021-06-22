@@ -1,0 +1,6 @@
+*.db
+__pycache__/
+venv
+.idea
+node_modules/
+digitalnx_web/__init__.py
