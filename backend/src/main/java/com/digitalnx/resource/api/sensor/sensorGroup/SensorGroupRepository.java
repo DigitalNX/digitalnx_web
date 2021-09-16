@@ -1,0 +1,11 @@
+package com.digitalnx.resource.api.sensor.sensorGroup;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+
+import java.util.List;
+
+public interface SensorGroupRepository extends JpaRepository<SensorGroup, Integer> {
+    @Query("SELECT id FROM #{#entityName}")
+    List<Integer> getAllIds();
+}

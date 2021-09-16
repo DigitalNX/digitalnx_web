@@ -1,0 +1,21 @@
+server:
+  port: '9000'
+  servlet:
+    context-path: /api/
+jwt:
+  jwtIssuer: dnx
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: admin
+    url: jdbc:mysql://${MYSQL_HOST:localhost}:3306/db_digitalnx
+    password: password
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+weather:
+  apiBaseUrl: http://api.openweathermap.org/data/2.5/forecast?q=%s&cnt=%s&appid=%s&units=metric
+  apiToken: <TOKEN>
+  location: <CITY>

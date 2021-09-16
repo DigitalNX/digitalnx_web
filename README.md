@@ -1,11 +1,11 @@
 # DigitalNX Web app
 
-*DigitalNX Web* is a web app consisting of a back-end controller and a front-end for running a basic IoT setup. The back-end in this project is a simple RESTFul API server written in Python, and the front-end is written in Javascript and uses Vue.js to build a web user interface. This separation makes it easy to integrate the back-end with other platforms such as mobile apps and other controllers.
+*DigitalNX Web* is a web app consisting of a back-end API and a front-end (SPA) for running a basic IoT setup. The back-end in this project is a simple RESTFul API server written in Java using Spring, and the front-end is written in Javascript and uses Vue.js to build a web user interface. This separation makes it easy to integrate the back-end with other platforms such as mobile apps and other controllers.
 
 ![Alt text](https://raw.githubusercontent.com/DigitalNX/digitalnx.github.io/main/demo/screenshot.png)
 
 ## Installation
-First make sure you have [Node](https://nodejs.org) and Python3 installed, then run the following command:
+First make sure you have [Node](https://nodejs.org) and OpenJdk 11+ installed, then run the following command:
 
 ```
 make install
@@ -15,17 +15,9 @@ And to start the project use:
 ```
 make run
 ```
-Now you should be able to view and login to the front-end at *http://127.0.0.1:8888* with the username **admin** and password **password**.
+Now you should be able to view and login to the front-end at *http://127.0.0.1:8080* with the username **admin** and password **password**.
 
-(Optional) To enable weather forecast, sign up on [openweathermap.org](http://openweathermap.org) for free and get a token and replace it with *\<WEATHER_TOKEN\>* in *\_\_init\_\_.py*.
-
-Note: The command ``` make install``` installs front-end and back-end requirements and also generates a sample database schema. You can do these steps individually with the following make commands instead:
-
-```
-make install_server
-make install_client
-make init
-```
+(Optional) To enable weather forecast, sign up on [openweathermap.org](http://openweathermap.org) for free and get a token and replace it with *\<TOKEN\>* in *backend/application.yml*.
 
 ## Widgets
 The front-end consists of widgets such as relay control widget, note-taking widget, ... which are derived from base widgets MediumBoxWidget, SmallBoxWidget, etc. These base widgets take advantage of Bootstrap styling system. As a result the deriving widgets get appropriate sizing and positioning on the page regardless of screen size and device.
@@ -76,7 +68,7 @@ Note routes:
 - `/api/note/<int:note_id>/remove` - removes the note with id `note_id`
 
 Weather routes:
-- `/api/weather_report` - returns the current weather info and forecast of the next 7 days
+- `/api/weatherForecast` - returns the current weather info and forecast of the next 7 days
 
 Reley scheduling routes:
 - `/schedules/relay/all` - returns all registered schedules for relays
