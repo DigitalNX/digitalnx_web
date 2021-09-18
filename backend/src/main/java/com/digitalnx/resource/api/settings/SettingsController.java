@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class SettingsController {
-    SettingsRepository repository;
+    private final SettingsRepository repository;
     SettingsController(SettingsRepository repository) {
         this.repository = repository;
     }

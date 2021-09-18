@@ -11,8 +11,8 @@ import java.util.stream.Collectors;
 
 @RestController
 public class RelayGroupController {
-    RelayGroupRepository repository;
-    RelayGroupModelAssembler assembler;
+    private final RelayGroupRepository repository;
+    private final RelayGroupModelAssembler assembler;
     public RelayGroupController(RelayGroupRepository repository, RelayGroupModelAssembler assembler) {
         this.repository = repository;
         this.assembler = assembler;

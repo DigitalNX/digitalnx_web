@@ -15,7 +15,12 @@ createApp(App).use(router).use(store).mixin({
         let res = axios.post(this.$store.state.resource_server + route, obj, { headers: { Authorization: "Bearer " + this.$store.state.token }})
         let data = (await res).data
         return data
-    }
+    },
+    async sendDELETERequest(route) {
+      let res = axios.delete(this.$store.state.resource_server + route, { headers: { Authorization: "Bearer " + this.$store.state.token }})
+      let data = (await res).data
+      return data
+  }
   },
 }).component("modal", {
   template: '#modal-template',

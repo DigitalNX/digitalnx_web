@@ -87,7 +87,7 @@ public class LayoutController {
         }
     }
 
-    @GetMapping("/layout/delete/{dashboardId}")
+    @DeleteMapping("/layout/{dashboardId}")
     public ResponseEntity<Object> delete(@PathVariable Integer dashboardId) {
         JSONObject res = new JSONObject();
         try {

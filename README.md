@@ -5,7 +5,7 @@
 ![Alt text](https://raw.githubusercontent.com/DigitalNX/digitalnx.github.io/main/demo/screenshot.png)
 
 ## Installation
-First make sure you have [Node](https://nodejs.org) and OpenJdk 11+ installed, then run the following command:
+First make sure you have [Node](https://nodejs.org) and OpenJDK 11+ installed, then run the following command:
 
 ```
 make install
@@ -43,41 +43,41 @@ Shows some information that the back-end info route provides. This information c
  
 ## Backend Routes
 Interface routes:
-- `/api/widgets/` - returns registered widgets in the database
-- `/api/layout/` - returns home layout widgets
-- `/api/layout/new` - accepts a post request consisting of a widget `name` and `id` and adds it to the home layout 
-- `/api/layout/delete` - accepts a post request containing widget `name` and `id` and deletes it from the home layout 
+- `[GET] /api/widgets/` - returns registered widgets in the database
+- `[GET] /api/layout/` - returns home layout widgets
+- `[POST] /api/layout/new` - accepts a post request consisting of a widget `name` and `id` and adds it to the home layout 
+- `[DELETE] /api/layout/<int:layout_id>` - removes widget from home layout with id `layout_id`
 
 Relay routes:
-- `/api/relays/` - returns registered relays in the database
-- `/api/relays/<int:group_id>/` - returns relays with group id `group_id`
-- `/api/relay/<int:relay_id>` - returns relay info (address, device name, group id and the status) of relays with id `relay_id` 
-- `/api/relay/<int:relay_id>/<string:action>` - turns relay with id `relay_id` *on* or *off* depending on the `action` value
+- `[GET] /api/relays/` - returns registered relays in the database
+- `[GET] /api/relays/<int:group_id>/` - returns relays with group id `group_id`
+- `[GET] /api/relay/<int:relay_id>` - returns relay info (address, device name, group id and the status) of relays with id `relay_id` 
+- `[GET] /api/relay/<int:relay_id>/<string:action>` - turns relay with id `relay_id` *on* or *off* depending on the `action` value
 
 Sensor routes:
-- `/api/sensors/` - returns registered sensors in the database
-- `/api/sensors/<int:group_id>/` - returns sensors with group id `group_id`
-- `/api/sensor/<int:sensor_id>` - returns sensor info (address, device name, group id, sensor_type and value) with id `sensor_id` 
-- `/api/sensor/<int:sensor_id>/data` - returns output of sensor with id `sensor_id`
+- `[GET] /api/sensors/` - returns registered sensors in the database
+- `[GET] /api/sensors/<int:group_id>/` - returns sensors with group id `group_id`
+- `[GET] /api/sensor/<int:sensor_id>` - returns sensor info (address, device name, group id, sensor_type and value) with id `sensor_id` 
+- `[GET] /api/sensor/<int:sensor_id>/data` - returns output of sensor with id `sensor_id`
 
 Note routes:
-- `/api/notes/` - returns notes stored in the database
-- `/api/note/<int:note_id>` - returns title and body of the note with id `note_id`
-- `/api/note/new` - accepts a post request consisting of a note title and body and adds it to the database 
-- `/api/note/<int:note_id>/update` - accepts a post request consisting of a note tile and body and update the note with id `note_id` with it
-- `/api/note/<int:note_id>/remove` - removes the note with id `note_id`
+- `[GET] /api/notes/` - returns notes stored in the database
+- `[GET] /api/note/<int:note_id>` - returns title and body of the note with id `note_id`
+- `[POST] /api/note/new [POST]` - accepts a post request consisting of a note title and body and adds it to the database 
+- `[POST] /api/note/<int:note_id>/update` - accepts a post request consisting of a note tile and body and update the note with id `note_id` with it
+- `[DELETE] /api/note/<int:note_id>/` - removes the note with id `note_id`
 
 Weather routes:
-- `/api/weatherForecast` - returns the current weather info and forecast of the next 7 days
+- `[GET] /api/weatherForecast` - returns the current weather info and forecast of the next 7 days
 
 Reley scheduling routes:
-- `/schedules/relay/all` - returns all registered schedules for relays
-- `/schedules/relay/<int:relay_id>` - returns schedule for the relay with id `relay_id` (if exists)
-- `/schedules/relay/<int:relay_id>/add` - accepts a post request containing period, execution duration and description to add for scheduling `relay_id`
-- `/schedules/relay/<int:relay_id>/remove` - removes the relay schedule for relay with id `relay_id`
+- `[GET] /schedules/relay/all` - returns all registered schedules for relays
+- `[GET] /schedules/relay/<int:relay_id>` - returns schedule for the relay with id `relay_id` (if exists)
+- `[POST] /schedules/relay/<int:relay_id>/add` - accepts a post request containing period, execution duration and description to add for scheduling `relay_id`
+- `[DELETE] /schedules/relay/<int:relay_id>/` - removes the relay schedule for relay with id `relay_id`
 
 Info routes:
-- `/api/info_data` - returns info widgets data (each info widget data as an entry in an array)
+- `[GET] /api/infoData` - returns info widgets data (each info widget data as an entry in an array)
 
 ## License
 This project is licenced under **GNU Public License 3**. Visit the [LICENSE](https://github.com/DigitalNX/digitalnx_web/blob/main/LICENSE) file for more info.

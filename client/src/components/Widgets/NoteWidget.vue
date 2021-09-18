@@ -56,7 +56,7 @@ export default {
   },
   methods: {
     async remove() {
-      await this.sendGETRequest('/note/' + this.$props.id + '/delete')
+      await this.sendDELETERequest('/note/' + this.$props.id)
       this.$emit('notes-list-update');
     },
   },

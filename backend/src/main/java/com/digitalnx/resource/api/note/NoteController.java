@@ -14,8 +14,8 @@ import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 
 @RestController
 public class NoteController {
-    NoteRepository repository;
-    NoteModelAssembler assembler;
+    private final NoteRepository repository;
+    private final NoteModelAssembler assembler;
     public NoteController(NoteRepository repository, NoteModelAssembler assembler) {
         this.repository = repository;
         this.assembler = assembler;
@@ -65,7 +65,7 @@ public class NoteController {
         }
     }
 
-    @GetMapping("/note/{id}/delete")
+    @DeleteMapping("/note/{id}")
     public ResponseEntity<Object> delete(@PathVariable Integer id) {
         JSONObject res = new JSONObject();
         try {

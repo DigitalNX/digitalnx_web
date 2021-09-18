@@ -151,7 +151,7 @@ export default {
       });
     },
     async removeLayoutItem(dashboardId) {
-      this.sendGETRequest("/layout/delete/" + dashboardId);
+      this.sendDELETERequest("/layout/" + dashboardId);
     },
     capitalize(str) {
       if (typeof str === 'string') {
