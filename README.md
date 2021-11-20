@@ -1,6 +1,6 @@
 # DigitalNX Web app
 
-*DigitalNX Web* is a web app consisting of a back-end API and a front-end (SPA) for running a basic IoT setup. The back-end in this project is a simple RESTFul API server written in Java using Spring, and the front-end is written in Javascript and uses Vue.js to build a web user interface. This separation makes it easy to integrate the back-end with other platforms such as mobile apps and other controllers.
+*DigitalNX Web* is a web app consisting of a back-end API and a front-end (SPA) for running a basic IoT setup. The back-end in this project is a RESTFul API server written in Java using Spring, and the front-end is written in Javascript and uses Vue.js to build a web user interface. This separation makes it easy to integrate the back-end with other platforms such as mobile apps and other controllers.
 
 ![Alt text](https://raw.githubusercontent.com/DigitalNX/digitalnx.github.io/main/demo/screenshot.png)
 
